@@ -28,4 +28,4 @@ jobs:
       # If manually triggered and node_version_override is provided, use that. Otherwise, default to '18'.
       node-version: ${{ github.event.inputs.node_version_override || '18' }}
 
-    # secrets: inherit # Not needed for this minimal example, but good to remember for later when you add steps requiring secrets
+    # secrets: inherit # Not needed for this minimal example, but good to remember for later when you add steps requiring secret
