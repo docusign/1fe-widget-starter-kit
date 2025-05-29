@@ -1,38 +1,30 @@
-// import { Interpolate } from '@ds/react-utils';
 import styled from '@emotion/styled';
-import { Flex } from 'antd';
+import { Flex, Typography, Divider } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { JsonViewer } from '@textea/json-viewer'
 
-import { jsonReplacer } from '../platformPropsImport/comparePlatformProps';
-import { ResultElementBoundary } from '../misc/resultElementBoundary';
-// TODO: how does useTranslate work
-// import { useTranslate } from 'src/locales';
 import { RootState } from '../../store';
 import { WidgetProps } from '../../contract';
 
 const Container = styled.div({
-  padding: '40px',
+  padding: '48px',
+  backgroundColor: 'white'
 });
 
+const { Title, Text } = Typography;
+
 export const Home: React.FC<WidgetProps> = (props) => {
-  // const t = useTranslate();
   const greeting = useSelector((state: RootState) => state.hello.greeting);
 
   return (
     <Container>
-      <h1>{greeting}</h1>
+      <Title>{greeting}</Title>
+      <Text>This widget starter kit is made possible leveraging @1fe/cli for rapid development.</Text>
+      <Divider />
       <Flex vertical>
-        <p data-qa='wsk.page.welcome'>Welcome to 1FE Starter Kit</p>
-        <ResultElementBoundary data-qa='wsk.props.data'>
-          {JSON.stringify(
-            {
-              ...props,
-            },
-            jsonReplacer(),
-            2,
-          )}
-        </ResultElementBoundary>
+        <Title level={4}>Check out the Platform and Host Props</Title>
+        <JsonViewer value={props} enableClipboard={false} defaultInspectDepth={3} />
       </Flex>
     </Container>
   );
