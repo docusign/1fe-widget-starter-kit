@@ -1,62 +1,52 @@
 import { platformProps } from '@1fe/shell';
-import { Button, Flex } from 'antd';
-import { useReducer, useState } from 'react';
+import { Button, Flex, Card } from 'antd';
+import { useState } from 'react';
 
 import { GetChildWidget } from '../misc/utils';
 import { WidgetContainer } from '../misc/widgetContainer';
-// import { useTranslate } from 'src/locales';
 
 export const Context = () => {
-  const [isVisible, showWidget] = useReducer(() => true, false);
+  const [showWidget, setShowWidget] = useState(false);
   const [contextResult, setContextResult] = useState('');
-
-  // const t = useTranslate();
 
   return (
     <div data-qa='utils.context.container'>
-      <h1>utils.context</h1>
-      {/* <h1>{t('Components.Context.Index')}</h1> */}
-
-      <Flex>
-        <Button
-          size='large'
-          data-qa='utils.context.get.btn'
-          onClick={showWidget}
-        >
+      <Card title="Context Utilities" style={{ width: '650px' }}>
+        <Flex gap={5}>
+          <Button
+            size='large'
+            data-qa='utils.context.get.btn'
+            onClick={() => setShowWidget(true)}
+          >
           utils.context.get
-          {/* {t('Components.Context.GetButtonText')} */}
         </Button>
         <Button
           size='large'
           data-qa='utils.context.self.btn'
           onClick={() => {
+            setShowWidget(false);
             setContextResult(JSON.stringify(platformProps.context.self));
-            // setContextResult(JSON.stringify(platformProps.context.self));
           }}
         >
           utils.context.self
-          {/* {t('Components.Context.SelfButtonText')} */}
         </Button>
         <Button
           size='large'
           data-qa='utils.context.host.btn'
           onClick={() => {
+            setShowWidget(false);
             setContextResult(JSON.stringify(platformProps.context.getHost()));
-            // setContextResult(JSON.stringify(platformProps.context.getHost()));
           }}
         >
           utils.context.getHost
-          {/* {t('Components.Context.GetHostButtonText')} */}
         </Button>
-      </Flex>
-
-      <div data-qa='wsk.context.result.container'>{contextResult}</div>
-
-      {isVisible && (
-        <WidgetContainer data-qa='utils.widgets.context.result.container'>
-          <GetChildWidget isVisible={isVisible} />
-        </WidgetContainer>
-      )}
+        </Flex>      
+        {showWidget ? (
+          <WidgetContainer data-qa='utils.widgets.context.result.container'>
+            <GetChildWidget isVisible={showWidget} />
+          </WidgetContainer>
+        ) : (<div data-qa='wsk.context.result.container' style={{ marginTop: 20 }}>{contextResult}</div>)}
+      </Card>  
     </div>
   );
 };
