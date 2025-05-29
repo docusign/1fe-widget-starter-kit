@@ -4,6 +4,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Home } from './routes/home';
 import { UtilsDemo } from './routes/utilsDemo';
 import { WidgetProps } from '../contract';
+import OneFeLogo from '../assets/1fe-logo.svg';
 
 /**
  * Suggestion: setup the top level routing for your application here.
@@ -11,24 +12,30 @@ import { WidgetProps } from '../contract';
 export const Router: React.FC<WidgetProps> = (props) => {
   const navigate = useNavigate();
 
-  const { Header } = Layout;
+  const { Header, Content } = Layout;
 
   return (
-    <>
+    <Layout>
       <Header
         style={{
           position: 'sticky',
           top: 0,
-          zIndex: 1,
+          zIndex: 0,
           width: '100%',
-          display: 'contents',
+          display: 'inline-flex',
           alignItems: 'center',
+          backgroundColor: 'white',
         }}
       >
+        <img
+          style={{ width: '80px' }}
+          src={OneFeLogo}
+          alt="1FE Logo"
+        />
         <Menu
           theme='light'
           mode='horizontal'
-          defaultSelectedKeys={['0']}
+          defaultSelectedKeys={['HOME']}
           items={[
             {
               key: 'HOME',
@@ -47,11 +54,11 @@ export const Router: React.FC<WidgetProps> = (props) => {
           }}
         />
       </Header>
-      <Routes>
-        <Route path='/' element={<Home {...props} />} />
-        <Route path='/utils' element={<UtilsDemo />} />
-        <Route path='*' element={<h1>{'404'}</h1>} />
-      </Routes>
-    </>
+        <Routes>
+          <Route path='/' element={<Home {...props} />} />
+          <Route path='/utils' element={<UtilsDemo />} />
+          <Route path='*' element={<h1>{'404'}</h1>} />
+        </Routes>
+    </Layout>
   );
 };

@@ -7,4 +7,5 @@ export const WidgetContainer = styled.div({
   padding: '10px',
   border: '1px solid black',
   overflow: 'visible',
+  marginTop: '20px',
 });

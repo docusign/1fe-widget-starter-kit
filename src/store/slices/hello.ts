@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  greeting: 'Hello galactic explorer!',
+  greeting: 'Welcome to 1FE Starter Kit',
 };
 
 export const helloSlice = createSlice({
