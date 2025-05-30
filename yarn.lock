@@ -7,7 +7,7 @@ __metadata:
 
 "@1fe/cli@github:docusign/1fe#head=separate-configs&workspace=@1fe/cli":
   version: 0.0.1
-  resolution: "@1fe/cli@https://github.com/docusign/1fe.git#workspace=%401fe%2Fcli&commit=5066d71561988ef09b41cb8c933863b2ca7eb1bb"
+  resolution: "github:docusign/1fe#head=separate-configs&workspace=@1fe/cli"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/preset-env": "npm:^7.23.3"
