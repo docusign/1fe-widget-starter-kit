@@ -10,8 +10,8 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
-    "@1fe/cli": "github:docusign/1fe#head=main&workspace=@1fe/cli",
-    "@repo/widget-base-config": "github:docusign/1fe-sample-widget-base-config#head=main",
+    "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
+    "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
     "cross-env": "^7.0.3",
@@ -26,7 +26,7 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@1fe/shell": "github:docusign/1fe#head=main&workspace=@1fe/shell",
+    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.0",
