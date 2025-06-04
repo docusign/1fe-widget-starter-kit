@@ -1,5 +1,6 @@
 {
-  "name": "app1",
+  "name": "@1fe/test-starter-kit",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "1fe-cli --trace --environment integration dev",
