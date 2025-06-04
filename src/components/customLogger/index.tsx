@@ -7,25 +7,26 @@ import { utilSectionStyles } from '../routes/styles/utilsDemo.styles';
  */
 export const CustomLoader: React.FC = () => {
   return (
-    <div css={utilSectionStyles} data-qa='utils.experience.container'>
-      <Card title="Custom Utility: Console Logger" style={{ width: '650px' }}>
-        <Flex gap={5}>
-          <Button
-            data-qa='utils.experience.title.set'
-            onClick={() => platformProps.utils.logger.log('Example log message')}
-          >
-            utils.logger.log
-          </Button>
-          <Button
-            data-qa='utils.experience.title.set'
-            onClick={() =>
-              platformProps.utils.logger.error('Example error message')
-            }
-          >
-            utils.logger.error
-          </Button>
-        </Flex>
-      </Card>
-    </div>
+    // <div css={utilSectionStyles} data-qa='utils.experience.container'>
+    //   <Card title="Custom Utility: Console Logger" style={{ width: '650px' }}>
+    //     <Flex gap={5}>
+    //       <Button
+    //         data-qa='utils.experience.title.set'
+    //         onClick={() => platformProps.utils.
+    //       >
+    //         utils.logger.log
+    //       </Button>
+    //       <Button
+    //         data-qa='utils.experience.title.set'
+    //         onClick={() =>
+    //           platformProps.utils.logger.error('Example error message')
+    //         }
+    //       >
+    //         utils.logger.error
+    //       </Button>
+    //     </Flex>
+    //   </Card>
+    // </div>
+    <></>
   );
 };
