@@ -24,7 +24,7 @@ jobs:
     uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main # Replace @main with e.g. @v1.0.0 when ready
 
     with:
-      node-version: ${{ github.event.inputs.node_version_override || '18' }}
+      node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
       PRIVATE_KEY_FOR_1FE: ${{ secrets.SSH_PRIVATE_1FE }}
       PRIVATE_KEY_FOR_WIDGET_BASE_CONFIG: ${{ secrets.SSH_PRIVATE_BASE_CONFIG }}
