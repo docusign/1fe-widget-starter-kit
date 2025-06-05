@@ -1,6 +1,10 @@
 import React from 'react';
-export default function Root() {
-  return (
-    <section>My amazing component from app1 is mounted! Hello world</section>
-  );
+
+interface RootProps {
+  name: string;
 }
+const Root: React.FC<RootProps> = ({ name }) => {
+  return <div>{name} is mounted!</div>;
+};
+
+export default Root;
