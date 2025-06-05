@@ -1,4 +1,4 @@
-# File: docusign/1fe-widget-starter-kit/.github/workflows/widget-ci.yml.
+# File: docusign/1fe-widget-starter-kit/.github/workflows/widget-ci.yml
 name: Widget Starter Kit CI
 
 on:
@@ -13,7 +13,7 @@ on:
       node_version_override:
         description: 'Override Node.js version for this run (e.g., 20)'
         required: false
-        type: string
+        typ: string
 
 jobs:
   run_minimal_ci:
