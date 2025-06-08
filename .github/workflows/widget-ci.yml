@@ -11,7 +11,7 @@ on:
   workflow_dispatch: # Allows manual triggering from the Actions tab
     inputs:
       node_version_override:
-        description: 'Override Node.js version for this run (e.g., 20)'
+        description: "Override Node.js version for this run (e.g., 20)"
         required: false
         type: string
 
@@ -21,7 +21,7 @@ jobs:
     # This line calls the reusable workflow from your 1fe-ci-cd repository.
     # It's crucial to use a specific tag or commit SHA for stability in production.
     # For testing, you can use @main, but update it before relying on it heavily.
-    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main # Replace @main with e.g. @v1.0.0 when ready
+    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@sushruth/test-az-app-config # Replace @main with e.g. @v1.0.0 when ready
 
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
