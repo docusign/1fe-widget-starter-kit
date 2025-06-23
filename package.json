@@ -25,6 +25,7 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-config-ts-react-important-stuff": "^3.0.0",
     "eslint-plugin-prettier": "^5.2.4",
+    "eslint-plugin-react": "^7.37.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29",
     "jest-environment-jsdom": "^29",
