@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  greeting: 'Welcome to 1FE Starter Kit',
+  greeting: "Welcome to 1FE Starter Kit",
 };
 
 export const helloSlice = createSlice({
-  name: 'hello',
+  name: "hello",
   initialState,
   reducers: {
     changeGreeting: (state, action) => {
