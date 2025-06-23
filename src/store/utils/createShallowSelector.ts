@@ -1,5 +1,5 @@
-import { shallowEqual } from 'react-redux';
-import { createSelectorCreator, defaultMemoize } from 'reselect';
+import { shallowEqual } from "react-redux";
+import { createSelectorCreator, defaultMemoize } from "reselect";
 
 /**
  * Creates a selector that uses shallow equality instead of deep equality.
