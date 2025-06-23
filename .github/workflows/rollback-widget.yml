@@ -1,4 +1,3 @@
-# 1fe-widget-starter-kit/.github/workflows/rollback-widget.yml
 name: Rollback Widget
 
 on:
@@ -22,13 +21,11 @@ permissions:
 
 jobs:
   rollback-widget:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call rollback action
-        uses: docusign/1fe-ci-cd/.github/actions/rollback@main
-        with:
-          target-version: ${{ github.event.inputs.target-version }}
-          environment: ${{ github.event.inputs.environment }}
-          caller-repo: ${{ github.repository }}
-          caller-repo-ref: ${{ github.ref }}
-          AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
+    uses: docusign/1fe-ci-cd/.github/workflows/reusable-rollback-ci.yml@main
+    with:
+      target-version: ${{ github.event.inputs.target-version }}
+      environment: ${{ github.event.inputs.environment }}
+      caller-repo: ${{ github.repository }}
+      caller-repo-ref: ${{ github.ref }}
+    secrets:
+      AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
