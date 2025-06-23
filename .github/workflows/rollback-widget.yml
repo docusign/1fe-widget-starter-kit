@@ -17,16 +17,18 @@ on:
           - production
 
 permissions:
-  contents: read # Required to read the current repo's metadata (like github.repository)
-  id-token: write # Required if the called workflow needs it for OIDC
+  contents: read
+  id-token: write
 
 jobs:
-  call-rollback-workflow:
-    uses: docusign/1fe-ci-cd/.github/workflows/reusable-rollback-ci.yml@main
-    with:
-      target-version: ${{ github.event.inputs.target-version }}
-      environment: ${{ github.event.inputs.environment }}
-      caller-repo: ${{ github.repository }}
-      caller-repo-ref: ${{ github.ref }}
-    secrets:
-      AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
+  rollback-widget:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call rollback action
+        uses: docusign/1fe-ci-cd/.github/actions/rollback@main
+        with:
+          target-version: ${{ github.event.inputs.target-version }}
+          environment: ${{ github.event.inputs.environment }}
+          caller-repo: ${{ github.repository }}
+          caller-repo-ref: ${{ github.ref }}
+          AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
