@@ -35,8 +35,8 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
     "@1fe/eslint-config": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/eslint-config",
+    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.0",
