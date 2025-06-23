@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
+    "@playwright/test": "^1.53.1",
     "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
