@@ -1,0 +1,32 @@
+# 1fe-widget-starter-kit/.github/workflows/rollback-widget.yml
+name: Rollback Widget
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-version:
+        description: "The specific version to roll back to (e.g., 1.0.3 or 1.0.3-PR-123.abcde12)"
+        required: true
+        type: string
+      environment:
+        description: "The environment to rollback (e.g., integration or production)"
+        required: true
+        type: choice
+        options:
+          - integration
+          - production
+
+permissions:
+  contents: read # Required to read the current repo's metadata (like github.repository)
+  id-token: write # Required if the called workflow needs it for OIDC
+
+jobs:
+  call-rollback-workflow:
+    uses: docusign/1fe-ci-cd/.github/workflows/reusable-rollback-ci.yml@main # Replace 'main' with your default branch or a specific tag/SHA
+    with:
+      target-version: ${{ github.event.inputs.target-version }}
+      environment: ${{ github.event.inputs.environment }}
+      caller-repo: ${{ github.repository }} # Pass the current repo name (e.g., docusign/1fe-widget-starter-kit)
+      caller-repo-ref: ${{ github.ref }} # Pass the current branch/tag/SHA (e.g., refs/heads/main or refs/pull/123/merge)
+    secrets:
+      AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
