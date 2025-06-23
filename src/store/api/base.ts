@@ -5,9 +5,9 @@ import {
   createApi,
   fetchBaseQuery,
   retry,
-} from '@reduxjs/toolkit/query/react';
+} from "@reduxjs/toolkit/query/react";
 
-const REDUCER_PATH = 'widgetStarterKitApi';
+const REDUCER_PATH = "widgetStarterKitApi";
 
 export const determineEndpoint = (baseUrl?: string): string => {
   // eventually we will use the 1FE helper function for this
@@ -26,7 +26,7 @@ const enhancedBaseQuery: BaseQueryFn<
       baseUrl: determineEndpoint(),
       timeout: 60000,
       prepareHeaders: (headers) => {
-        headers.set('Content-Type', 'application/json');
+        headers.set("Content-Type", "application/json");
         return headers;
       },
     }),

@@ -15,19 +15,19 @@
 export const jsonReplacer = () => {
   const visited = new WeakSet();
   return (_key: unknown, value: unknown) => {
-    if (typeof value === 'object' && value !== null) {
+    if (typeof value === "object" && value !== null) {
       if (visited.has(value)) {
         return;
       }
       visited.add(value);
     }
-    if (typeof value == 'function') {
-      return 'function';
+    if (typeof value == "function") {
+      return "function";
     }
-    if (typeof value == 'symbol') {
-      return 'symbol';
+    if (typeof value == "symbol") {
+      return "symbol";
     }
-    if (typeof value === 'undefined') {
+    if (typeof value === "undefined") {
       return null;
     }
     return value;

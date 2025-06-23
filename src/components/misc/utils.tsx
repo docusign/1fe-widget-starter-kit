@@ -1,10 +1,10 @@
-import { platformProps } from '@1fe/shell';
-import React from 'react';
+import { platformProps } from "@1fe/shell";
+import React from "react";
 
-import { SkeletonLoader } from './skeletonLoader';
+import { SkeletonLoader } from "./skeletonLoader";
 
-const INTERNAL_GENERIC_CHILD = '@1fe/starter-kit2';
-const INTERNAL_GENERIC_VARIANTS = '@internal/generic-variants-widget';
+const INTERNAL_GENERIC_CHILD = "@1fe/starter-kit2";
+const INTERNAL_GENERIC_VARIANTS = "@internal/generic-variants-widget";
 
 export const GetChildWidget: React.FC<{
   isVisible: boolean;
@@ -24,7 +24,7 @@ export const GetChildWidgetWithCustomLoader: React.FC<{
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - Remove when the Loader option is available in widgets.get() from @1fe/shell
     Loader: (
-      <div data-qa='skeleton-loader'>
+      <div data-qa="skeleton-loader">
         <SkeletonLoader />
       </div>
     ),

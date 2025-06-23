@@ -6,4 +6,5 @@ export default {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/'],
 };
