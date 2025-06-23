@@ -17,8 +17,8 @@ on:
           - production
 
 permissions:
-  contents: read
-  id-token: write
+  contents: read # Required to read the current repo's metadata (like github.repository)
+  id-token: write # Required if the called workflow needs it for OIDC
 
 jobs:
   call-rollback-workflow:
