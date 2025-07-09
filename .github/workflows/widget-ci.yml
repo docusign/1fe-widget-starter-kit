@@ -1,5 +1,4 @@
-# FILE: docusign/1fe-widget-starter-kit/.github/workflows/widget-ci.yml
-name: Widget Starter Kit CI
+name: Widget CI
 
 on:
   push:
@@ -17,7 +16,7 @@ on:
 
 jobs:
   run_minimal_ci:
-    name: Run Minimal CI
+    name: Widget CI
     uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
