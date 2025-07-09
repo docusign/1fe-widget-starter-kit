@@ -88,3 +88,6 @@ src/types/widgets
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# playwright test results
+test_results
