@@ -1,5 +1,5 @@
 {
-  "name": "@1fe/test-starter-kit",
+  "name": "@1fe/widget-starter-kit",
   "version": "1.0.16",
   "type": "module",
   "scripts": {
@@ -13,8 +13,8 @@
   },
   "devDependencies": {
     "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
+    "@1fe/sample-widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@playwright/test": "^1.53.1",
-    "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

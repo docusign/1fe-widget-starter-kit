@@ -188,6 +188,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@1fe/sample-widget-base-config@git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main":
+  version: 0.0.1
+  resolution: "@1fe/sample-widget-base-config@git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#commit=6751c4045c4be540e4ecce4bd934d19cce5d5c93"
+  dependencies:
+    "@1fe/cli": "github:docusign/1fe#head=main&workspace=@1fe/cli"
+    ky: "npm:^1.7.5"
+    typescript: "npm:5.8.2"
+  checksum: 10c0/b1d7f925c7b6c335fa70093a51267a2c879aef18e176409b76a0dad4cb0bbeff49b2bba44661346b682259618e6bbe3200cfc98f272d3ddb52143f7f973d3b9a
+  languageName: node
+  linkType: hard
+
 "@1fe/shell@git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell":
   version: 1.0.10
   resolution: "@1fe/shell@git+ssh://git@github.com/docusign/1fe.git#workspace=%401fe%2Fshell&commit=3b9cc5518b383418e224ce972ef2041e007b5c2a"
@@ -213,19 +224,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@1fe/test-starter-kit@workspace:.":
+"@1fe/widget-starter-kit@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@1fe/test-starter-kit@workspace:."
+  resolution: "@1fe/widget-starter-kit@workspace:."
   dependencies:
     "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli"
     "@1fe/eslint-config": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/eslint-config"
+    "@1fe/sample-widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main"
     "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
     "@mui/material": "npm:^7.1.0"
     "@playwright/test": "npm:^1.53.1"
     "@reduxjs/toolkit": "npm:1.9.1"
-    "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.3.0"
@@ -3785,17 +3796,6 @@ __metadata:
   version: 1.23.0
   resolution: "@remix-run/router@npm:1.23.0"
   checksum: 10c0/eaef5cb46a1e413f7d1019a75990808307e08e53a39d4cf69c339432ddc03143d725decef3d6b9b5071b898da07f72a4a57c4e73f787005fcf10162973d8d7d7
-  languageName: node
-  linkType: hard
-
-"@repo/widget-base-config@git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main":
-  version: 0.0.1
-  resolution: "@repo/widget-base-config@git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#commit=a9bafc55149aeb2ad22dcbe56805b8e20e425993"
-  dependencies:
-    "@1fe/cli": "github:docusign/1fe#head=main&workspace=@1fe/cli"
-    ky: "npm:^1.7.5"
-    typescript: "npm:5.8.2"
-  checksum: 10c0/aec3687641b761601a0e25465f1360f791bf534fd68af07381091a81c9d111b756207249b76349d9533b323cbf4daebf3858e2b1e3a4371012d665e032c7e56e
   languageName: node
   linkType: hard
 
