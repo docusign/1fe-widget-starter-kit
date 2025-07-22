@@ -55,6 +55,5 @@
     "single-spa": "^5.9.3",
     "single-spa-react": "^6.0.2"
   },
-  "types": "dist/app1.d.ts",
   "packageManager": "yarn@4.9.1"
 }
