@@ -10,14 +10,14 @@ on:
   workflow_dispatch:
     inputs:
       node_version_override:
-        description: 'Override Node.js version for this run (e.g., 20)'
+        description: "Override Node.js version for this run (e.g., 20)"
         required: false
         type: string
 
 jobs:
   run_minimal_ci:
     name: Widget CI
-    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main
+    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@sushruth/test-npm-token
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
@@ -25,3 +25,4 @@ jobs:
       PRIVATE_KEY_FOR_WIDGET_BASE_CONFIG: ${{ secrets.SSH_PRIVATE_BASE_CONFIG }}
       AKAMAI_NS_SSH_PRIVATE_KEY: ${{ secrets.AKAMAI_NS_SSH_PRIVATE_KEY }}
       AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
+      NPM_TOKEN_READONLY: ${{ secrets.NPM_TOKEN_READONLY_1FE }}
