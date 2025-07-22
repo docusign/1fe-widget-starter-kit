@@ -9,7 +9,7 @@ import {
 
 const REDUCER_PATH = "widgetStarterKitApi";
 
-export const determineEndpoint = (baseUrl?: string): string => {
+export const determineEndpoint = (/*baseUrl?: string*/): string => {
   // eventually we will use the 1FE helper function for this
   // e.g. platform.network.getESignProxyUrlForESignEnvironment(baseUrl);
   // see proposed structure here {{ FILL IN }}

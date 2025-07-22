@@ -12,8 +12,8 @@
     "test": "yarn jest"
   },
   "devDependencies": {
-    "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
-    "@1fe/sample-widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
+    "@1fe/cli": "0.0.1",
+    "@1fe/sample-widget-base-config": "0.0.1",
     "@playwright/test": "^1.53.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -39,8 +39,7 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@1fe/eslint-config": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/eslint-config",
-    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
+    "@1fe/shell": "0.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.0",
