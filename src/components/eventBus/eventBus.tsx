@@ -23,7 +23,7 @@ export const EventBus = () => {
             data-qa="utils.eventBus.publish1.btn"
             onClick={() => {
               platformProps.utils.eventBus.publish<WidgetEvents, "event1">({
-                targetWidgetId: "@1fe/starter-kit2",
+                targetWidgetId: "@1fe/sample-widget",
                 eventName: "event1",
                 data: { param1: "Listener is working!" },
               });
@@ -48,7 +48,7 @@ export const EventBus = () => {
           <WidgetContainer data-qa="utils.widgets.eventBus.result.container">
             <GetChildWidget
               isVisible={isVisible}
-              widgetId={"@1fe/starter-kit2"}
+              widgetId={"@1fe/sample-widget"}
             />
           </WidgetContainer>
         )}
