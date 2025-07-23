@@ -1,6 +1,6 @@
 {
   "name": "@1fe/widget-starter-kit",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "type": "module",
   "scripts": {
     "dev": "1fe-cli --trace --environment integration dev",
