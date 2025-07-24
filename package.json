@@ -1,6 +1,6 @@
 {
-  "name": "@1fe/test-starter-kit",
-  "version": "1.0.15",
+  "name": "@1fe/widget-starter-kit",
+  "version": "1.0.20",
   "type": "module",
   "scripts": {
     "dev": "1fe-cli --trace --environment integration dev",
@@ -12,9 +12,9 @@
     "test": "yarn jest"
   },
   "devDependencies": {
-    "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
+    "@1fe/cli": "0.0.1",
+    "@1fe/sample-widget-base-config": "0.0.1",
     "@playwright/test": "^1.53.1",
-    "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -39,8 +39,7 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@1fe/eslint-config": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/eslint-config",
-    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
+    "@1fe/shell": "0.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^7.1.0",
@@ -56,6 +55,5 @@
     "single-spa": "^5.9.3",
     "single-spa-react": "^6.0.2"
   },
-  "types": "dist/app1.d.ts",
   "packageManager": "yarn@4.9.1"
 }

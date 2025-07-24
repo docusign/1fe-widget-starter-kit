@@ -3,8 +3,8 @@ import React from "react";
 
 import { SkeletonLoader } from "./skeletonLoader";
 
-const INTERNAL_GENERIC_CHILD = "@1fe/starter-kit2";
-const INTERNAL_GENERIC_VARIANTS = "@internal/generic-variants-widget";
+const INTERNAL_GENERIC_CHILD = "@1fe/sample-widget";
+// const INTERNAL_GENERIC_VARIANTS = "@internal/generic-variants-widget";
 
 export const GetChildWidget: React.FC<{
   isVisible: boolean;
