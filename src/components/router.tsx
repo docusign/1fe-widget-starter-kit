@@ -12,7 +12,7 @@ import OneFeLogo from "../assets/1fe-logo.svg";
 export const Router: React.FC<WidgetProps> = (props) => {
   const navigate = useNavigate();
 
-  const { Header, Content } = Layout;
+  const { Header } = Layout;
 
   return (
     <Layout>
