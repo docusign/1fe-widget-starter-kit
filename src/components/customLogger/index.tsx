@@ -1,6 +1,6 @@
-import { Button, Flex, Card } from "antd";
-import { platformProps } from "@1fe/shell";
-import { utilSectionStyles } from "../routes/styles/utilsDemo.styles";
+// import { Button, Flex, Card } from "antd";
+// import { platformProps } from "@1fe/shell";
+// import { utilSectionStyles } from "../routes/styles/utilsDemo.styles";
 
 /**
  * Custom Utility examples
