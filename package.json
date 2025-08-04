@@ -1,6 +1,7 @@
 {
   "name": "@1fe/widget-starter-kit",
-  "version": "1.0.22",
+  "version": "0.1.1",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "1fe-cli --trace --environment integration dev",
