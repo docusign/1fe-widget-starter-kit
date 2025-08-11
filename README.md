@@ -177,8 +177,8 @@ yarn build:widget
 ## Getting Help
 
 - **[1fe Documentation](https://1fe.com/getting-started/installation/)** - Complete platform documentation
-- **[GitHub Issues](https://github.com/docusign/1fe-widget-starter-kit/issues)** - Report bugs or request features
-- **[GitHub Discussions](https://github.com/docusign/1fe-widget-starter-kit/discussions)** - Ask questions and share ideas
+- **[GitHub Issues](https://github.com/docusign/1fe/issues)** - Report bugs or request features
+- **[GitHub Discussions](https://github.com/docusign/1fe/discussions)** - Ask questions and share ideas
 
 ## License
 
