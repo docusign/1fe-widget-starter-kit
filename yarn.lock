@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@1fe/cli@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@1fe/cli@npm:0.0.1"
+"@1fe/cli@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@1fe/cli@npm:0.1.1"
   dependencies:
     "@babel/core": "npm:^7.27.4"
     "@babel/preset-env": "npm:^7.27.2"
@@ -89,24 +89,24 @@ __metadata:
     zod-validation-error: "npm:^3.4.1"
   bin:
     1fe-cli: dist/index.js
-  checksum: 10c0/c18d3d6a3e7874ea0046055fc8977a911a54b1f8400b8f5a6a242004e92a3122bc3c9bf1b83df9463b4d8404cfa62c372279088c80f7ba54d3ed3b085241e752
+  checksum: 10c0/83a6decdac41423ccd9e82b1dcdede09799f3ea16e37004d2bc76ebba84edbf6c6672e1e94eafed3caf7fbb695a5d16b11ed326b8619f547cd6d5f2059660fab
   languageName: node
   linkType: hard
 
-"@1fe/sample-widget-base-config@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@1fe/sample-widget-base-config@npm:0.0.1"
+"@1fe/sample-widget-base-config@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@1fe/sample-widget-base-config@npm:0.1.2"
   dependencies:
-    "@1fe/cli": "npm:0.0.1"
+    "@1fe/cli": "npm:^0.1.1"
     ky: "npm:^1.7.5"
     typescript: "npm:5.8.2"
-  checksum: 10c0/a5616e1b16b0815ae5be3223ab1154854f8746454d9b20ad06a0d31ef74462ddb563acd3b684d96e13a3c80cdc83ef8fe0739888b9339a3a7a621adb959afe76
+  checksum: 10c0/8fcb12ba9d767c30cf0524450518ddfef1662fa36af1b70b9714f646aeac0e1db99e9ee7da0e91ffb29d62e89f45507373deffc86685ce9586f7b621cc559181
   languageName: node
   linkType: hard
 
-"@1fe/shell@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@1fe/shell@npm:0.0.1"
+"@1fe/shell@npm:^0.1.1":
+  version: 0.1.2
+  resolution: "@1fe/shell@npm:0.1.2"
   dependencies:
     "@babel/core": "npm:^7.27.4"
     "@emotion/react": "npm:^11.14.0"
@@ -125,7 +125,7 @@ __metadata:
     react-router-dom: "npm:6.30.1"
     store2: "npm:^2.14.4"
     systemjs: "npm:^6.15.1"
-  checksum: 10c0/8c24f62caf7fb560cef5cf6cd2c7ac075e0bf8b898a9e7539394abdeac7aa6a97b8cb09fcba9a82ff14759b662a6d63e65d90d20523c853e57dfd5808949f2da
+  checksum: 10c0/0e0fbd87df7a2b82f8bad82c12139f2247f8d7c0ddd131f57462a278694c52384cb808c4bd8b95797a02e47a3b1e35c9eeaaa042361586b1be85c1d9b31286a8
   languageName: node
   linkType: hard
 
@@ -133,9 +133,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@1fe/widget-starter-kit@workspace:."
   dependencies:
-    "@1fe/cli": "npm:0.0.1"
-    "@1fe/sample-widget-base-config": "npm:0.0.1"
-    "@1fe/shell": "npm:0.0.1"
+    "@1fe/cli": "npm:^0.1.1"
+    "@1fe/sample-widget-base-config": "npm:^0.1.2"
+    "@1fe/shell": "npm:^0.1.1"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
     "@mui/material": "npm:^7.1.0"
