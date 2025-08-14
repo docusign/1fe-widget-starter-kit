@@ -37,7 +37,10 @@ const { Panel } = Collapse;
 
 export const Home: React.FC<WidgetProps> = (props) => {
   const greeting = useSelector((state: RootState) => state.hello.greeting);
-  const [expandedProps, setExpandedProps] = useState<string[]>([]);
+  const [expandedProps, setExpandedProps] = useState<string[]>([
+    "platform",
+    "host",
+  ]);
   const navigate = useNavigate();
 
   const propSections = [
