@@ -2,7 +2,6 @@ import { platformProps } from "@1fe/shell";
 import { Flex, Card } from "antd";
 import { useReducer, useState } from "react";
 import {
-  ClockCircleOutlined,
   PlayCircleOutlined,
   StopOutlined,
   BarChartOutlined,

@@ -1,5 +1,4 @@
 import { Flex, Card } from "antd";
-import { ExperimentOutlined } from "@ant-design/icons";
 
 import { GetTitle } from "./getTitle";
 import { SetTitle } from "./setTitle";

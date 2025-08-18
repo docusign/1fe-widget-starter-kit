@@ -1,11 +1,6 @@
 import { Flex, Card } from "antd";
 import { useState } from "react";
-import {
-  BugOutlined,
-  InfoCircleOutlined,
-  ExclamationCircleOutlined,
-  CheckCircleOutlined,
-} from "@ant-design/icons";
+import { BugOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { platformProps } from "@1fe/shell";
 
 import { UtilityTooltip } from "../common/UtilityTooltip";
@@ -20,8 +15,14 @@ export const CustomLoader: React.FC = () => {
 
   const logInfo = (message: string) => {
     // Use platform logger utility if available, fallback to console
-    if ((platformProps.utils as any)?.logger?.log) {
-      // @ts-expect-error
+    if (
+      (
+        platformProps.utils as unknown as {
+          logger?: { log: (msg: string) => void };
+        }
+      )?.logger?.log
+    ) {
+      // @ts-expect-error - logger types are not fully defined in platform yet
       platformProps.utils.logger.log(message);
 
       setLogState(true);
@@ -30,8 +31,14 @@ export const CustomLoader: React.FC = () => {
 
   const logError = (message: string) => {
     // Use platform logger utility if available, fallback to console
-    if ((platformProps.utils as any)?.logger?.error) {
-      // @ts-expect-error
+    if (
+      (
+        platformProps.utils as unknown as {
+          logger?: { error: (msg: string) => void };
+        }
+      )?.logger?.error
+    ) {
+      // @ts-expect-error - logger types are not fully defined in platform yet
       platformProps.utils.logger.error(message);
 
       setLogState(true);

@@ -1,6 +1,5 @@
 import React from "react";
 import { Tooltip, Button, ButtonProps } from "antd";
-import { InfoCircleOutlined } from "@ant-design/icons";
 import {
   tooltipContent,
   tooltipTitle,

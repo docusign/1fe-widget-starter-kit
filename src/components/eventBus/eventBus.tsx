@@ -1,11 +1,7 @@
 import { platformProps } from "@1fe/shell";
 import { Flex, Card } from "antd";
 import { useReducer } from "react";
-import {
-  ThunderboltOutlined,
-  SendOutlined,
-  MessageOutlined,
-} from "@ant-design/icons";
+import { SendOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { GetChildWidget } from "../misc/utils";
 import { WidgetContainer } from "../misc/widgetContainer";

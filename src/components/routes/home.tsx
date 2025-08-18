@@ -1,12 +1,6 @@
 import styled from "@emotion/styled";
-import { Flex, Typography, Card, Button, Collapse, Tag } from "antd";
-import {
-  InfoCircleOutlined,
-  RocketOutlined,
-  CodeOutlined,
-  ToolOutlined,
-  BookOutlined,
-} from "@ant-design/icons";
+import { Flex, Typography, Card, Collapse, Tag } from "antd";
+import { RocketOutlined, ToolOutlined, BookOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

@@ -1,5 +1,5 @@
 import { platformProps } from "@1fe/shell";
-import { Input, Space } from "antd";
+import { Input } from "antd";
 import { useState } from "react";
 import { EditOutlined } from "@ant-design/icons";
 
