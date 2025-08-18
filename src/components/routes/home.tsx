@@ -16,6 +16,20 @@ import { RootState } from "../../store";
 import { WidgetProps } from "../../contract";
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps, colors } from "../../sharedStyles";
+import {
+  heroTitle,
+  heroDescription,
+  rocketIcon,
+  panelHeader,
+  panelDescription,
+  jsonViewerContainer,
+  proTipBox,
+  codeSnippet,
+  introSection,
+  introText,
+  jsonViewerStyle,
+} from "./styles/home.styles";
 
 const Container = styled.div({
   padding: "32px",
@@ -64,29 +78,11 @@ export const Home: React.FC<WidgetProps> = (props) => {
   return (
     <Container>
       <HeaderSection>
-        <Title
-          level={1}
-          style={{
-            margin: 0,
-            marginBottom: 16,
-            background: "linear-gradient(45deg, #1890ff, #722ed1)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontSize: "2.5rem",
-          }}
-        >
-          <RocketOutlined style={{ marginRight: 12, color: "#1890ff" }} />
+        <Title level={1} style={heroTitle}>
+          <RocketOutlined style={{ ...rocketIcon, color: colors.primary }} />
           Welcome to 1FE Widget Starter Kit
         </Title>
-        <Paragraph
-          style={{
-            fontSize: 16,
-            color: "#666",
-            maxWidth: 800,
-            margin: "0 auto",
-            lineHeight: 1.6,
-          }}
-        >
+        <Paragraph style={{ ...heroDescription, color: colors.textSecondary }}>
           {greeting} You're now ready to build amazing widgets with the 1FE
           platform! This starter kit provides everything you need to create,
           test, and deploy widgets with modern development tools and best
@@ -100,8 +96,8 @@ export const Home: React.FC<WidgetProps> = (props) => {
           title="Getting Started"
           description="Quick actions to help you begin your widget development journey with confidence and best practices."
         >
-          <Card style={{ width: "100%", maxWidth: "800px" }}>
-            <Flex gap={12} wrap>
+          <Card style={utilityCard}>
+            <Flex {...flexProps}>
               <UtilityTooltip
                 title="Explore Platform Utilities"
                 description="Navigate to the Utils tab to see interactive examples of all platform features like storage, context, and event bus."
@@ -134,10 +130,12 @@ export const Home: React.FC<WidgetProps> = (props) => {
           title="Widget Properties Explorer"
           description="Examine the platform and host properties passed to your widget."
         >
-          <Card style={{ width: "100%", maxWidth: "800px" }}>
+          <Card style={utilityCard}>
             <Flex vertical gap={16}>
-              <div style={{ marginBottom: 16 }}>
-                <Paragraph style={{ margin: 0, color: "#666" }}>
+              <div style={introSection}>
+                <Paragraph
+                  style={{ ...introText, color: colors.textSecondary }}
+                >
                   Your widget receives props from the platform and also from the
                   host widget. Expand the sections below to explore what's
                   available:
@@ -154,56 +152,38 @@ export const Home: React.FC<WidgetProps> = (props) => {
                 {propSections.map((section) => (
                   <Panel
                     header={
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 8,
-                        }}
-                      >
+                      <div style={panelHeader}>
                         <Tag color={section.color}>{section.title}</Tag>
-                        <span style={{ color: "#666", fontSize: 14 }}>
+                        <span
+                          style={{
+                            color: colors.textSecondary,
+                            ...panelDescription,
+                          }}
+                        >
                           {section.description}
                         </span>
                       </div>
                     }
                     key={section.key}
                   >
-                    <div
-                      style={{
-                        backgroundColor: "#fafafa",
-                        padding: 16,
-                        borderRadius: 6,
-                        maxHeight: 400,
-                        overflow: "auto",
-                      }}
-                    >
+                    <div style={jsonViewerContainer}>
                       <JsonViewer
                         value={section.data}
                         enableClipboard={true}
                         defaultInspectDepth={2}
                         theme="light"
-                        style={{ fontSize: 12 }}
+                        style={jsonViewerStyle}
                       />
                     </div>
                   </Panel>
                 ))}
               </Collapse>
 
-              <div
-                style={{
-                  marginTop: 16,
-                  padding: 12,
-                  backgroundColor: "#fff7e6",
-                  borderRadius: 6,
-                  fontSize: 14,
-                  color: "#fa8c16",
-                }}
-              >
+              <div style={proTipBox}>
                 💡 <strong>Pro Tip:</strong> Use{" "}
-                <code>platformProps.utils.*</code> to access powerful features
-                like storage, context management, and inter-widget
-                communication!
+                <code style={codeSnippet}>platformProps.utils.*</code> to access
+                powerful features like storage, context management, and
+                inter-widget communication!
               </div>
             </Flex>
           </Card>

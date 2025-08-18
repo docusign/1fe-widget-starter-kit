@@ -6,6 +6,7 @@ import { GetChildWidget, GetChildWidgetWithCustomLoader } from "../misc/utils";
 import { WidgetContainer } from "../misc/widgetContainer";
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps } from "../../sharedStyles";
 
 export const Get = () => {
   const [showWidget, setShowWidget] = useState(false);
@@ -20,8 +21,8 @@ export const Get = () => {
         title="Widget Load Utilities"
         description="load child widgets within your application."
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
-          <Flex gap={12} wrap>
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
             <UtilityTooltip
               title="Load Standard Widget"
               description="Loads a child widget using the default platform loader. This is the most common way to embed widgets."

@@ -4,6 +4,7 @@ import { ExperimentOutlined } from "@ant-design/icons";
 import { GetTitle } from "./getTitle";
 import { SetTitle } from "./setTitle";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard } from "../../sharedStyles";
 
 /**
  * Experience Utility examples
@@ -15,7 +16,7 @@ export const Experience: React.FC = () => {
         title="Experience Utilities"
         description="Control the user's experience."
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
+        <Card style={utilityCard}>
           <Flex gap={12} vertical>
             <SetTitle />
             <GetTitle />

@@ -11,6 +11,7 @@ import { GetChildWidget } from "../misc/utils";
 import { WidgetContainer } from "../misc/widgetContainer";
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps } from "../../sharedStyles";
 
 export const EventBus = () => {
   const [isVisible, showWidget] = useReducer(() => true, false);
@@ -26,8 +27,8 @@ export const EventBus = () => {
         title="Event Bus Utilities"
         description="Enable inter-widget communication through a publish-subscribe pattern. Send messages between widgets without direct coupling."
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
-          <Flex gap={12} wrap>
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
             <UtilityTooltip
               title="Load Event Listener"
               description="Loads a child widget that will listen for events. This demonstrates the receiving side of widget communication."

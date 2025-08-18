@@ -12,6 +12,7 @@ import { WidgetContainer } from "../misc/widgetContainer";
 import { GetChildWidget } from "../misc/utils";
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps, colors } from "../../sharedStyles";
 
 export const AppLoadTime = () => {
   const [isVisible, showWidget] = useReducer(() => true, false);
@@ -24,8 +25,8 @@ export const AppLoadTime = () => {
         title="Performance Monitoring Utilities"
         description="Measure and track application load times, and custom timing markers"
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
-          <Flex gap={12} wrap>
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
             <UtilityTooltip
               title="Load Demo Widget"
               description="Loads a demo widget to demonstrate performance measurement during widget loading and rendering."
@@ -101,7 +102,7 @@ export const AppLoadTime = () => {
 
           {entries && (
             <div style={{ marginTop: 16 }}>
-              <h4 style={{ margin: "0 0 8px 0", color: "#1890ff" }}>
+              <h4 style={{ margin: "0 0 8px 0", color: colors.primary }}>
                 📊 Performance Entries:
               </h4>
               <div

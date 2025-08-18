@@ -11,6 +11,7 @@ import { GetChildWidget } from "../misc/utils";
 import { WidgetContainer } from "../misc/widgetContainer";
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps } from "../../sharedStyles";
 
 export const Context = () => {
   const [showWidget, setShowWidget] = useState(false);
@@ -22,8 +23,8 @@ export const Context = () => {
         title="Context Utilities"
         description="Access widget context information including host environment details, widget metadata and more"
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
-          <Flex gap={12} wrap>
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
             <UtilityTooltip
               title="Load Child Widget"
               description="Demonstrates how to load a child widget."

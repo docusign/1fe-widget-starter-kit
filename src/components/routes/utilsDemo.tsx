@@ -10,6 +10,15 @@ import { Widgets } from "../widgets";
 
 import { AppLoadTime } from "../appLoadTime/appLoadTime";
 import { CustomLoader } from "../customLogger";
+import { colors } from "../../sharedStyles";
+import {
+  heroTitle,
+  heroDescription,
+  rocketIcon,
+  infoCard,
+  infoIconContainer,
+  infoText,
+} from "./styles/utilsDemo.styles";
 
 const Container = styled.div({
   padding: "32px",
@@ -32,29 +41,11 @@ export const UtilsDemo = () => {
   return (
     <Container>
       <HeaderSection>
-        <Title
-          level={1}
-          style={{
-            margin: 0,
-            marginBottom: 16,
-            background: "linear-gradient(45deg, #1890ff, #722ed1)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            fontSize: "2.5rem",
-          }}
-        >
-          <RocketOutlined style={{ marginRight: 12, color: "#1890ff" }} />
+        <Title level={1} style={heroTitle}>
+          <RocketOutlined style={{ ...rocketIcon, color: colors.primary }} />
           1FE Platform Utilities
         </Title>
-        <Paragraph
-          style={{
-            fontSize: 16,
-            color: "#666",
-            maxWidth: 800,
-            margin: "0 auto",
-            lineHeight: 1.6,
-          }}
-        >
+        <Paragraph style={{ ...heroDescription, color: colors.textSecondary }}>
           This page highlights the default platform utilities available to 1FE
           widgets. Each utility is designed to solve common widget development
           challenges - from managing context and storage to inter-widget
@@ -62,26 +53,10 @@ export const UtilsDemo = () => {
           utility that was added by the 1FE instance and is being made available
           by the shell.
         </Paragraph>
-        <Card
-          size="small"
-          style={{
-            marginTop: 20,
-            maxWidth: 600,
-            margin: "20px auto 0",
-            backgroundColor: "#f0f9ff",
-            border: "1px solid #bae7ff",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 8,
-            }}
-          >
-            <InfoCircleOutlined style={{ color: "#1890ff" }} />
-            <span style={{ fontSize: 14, color: "#1890ff", fontWeight: 500 }}>
+        <Card size="small" style={infoCard}>
+          <div style={infoIconContainer}>
+            <InfoCircleOutlined style={{ color: colors.primary }} />
+            <span style={{ ...infoText, color: colors.primary }}>
               Hover over any button to see detailed explanations and API usage
             </span>
           </div>

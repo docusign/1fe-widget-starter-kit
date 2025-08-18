@@ -10,6 +10,7 @@ import { platformProps } from "@1fe/shell";
 
 import { UtilityTooltip } from "../common/UtilityTooltip";
 import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps } from "../../sharedStyles";
 
 /**
  * Platform Logger Utilities - Demonstrates 1FE platform logging
@@ -43,8 +44,8 @@ export const CustomLoader: React.FC = () => {
         title="Custom Logging Utilities"
         description="Demonstrates a custom logging utility that was added by the 1fe instance and is being made available by the shell."
       >
-        <Card style={{ width: "100%", maxWidth: "800px" }}>
-          <Flex gap={12} wrap>
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
             <UtilityTooltip
               title="Log Info Message"
               description="Uses platformProps.utils.logger.log() to log informational messages to console."
