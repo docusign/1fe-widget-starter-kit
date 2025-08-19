@@ -158,6 +158,7 @@ __metadata:
     eslint-config-ts-react-important-stuff: "npm:^3.0.0"
     eslint-plugin-prettier: "npm:^5.2.4"
     eslint-plugin-react: "npm:^7.37.5"
+    globals: "npm:^16.3.0"
     identity-obj-proxy: "npm:^3.0.0"
     jest: "npm:^29"
     jest-environment-jsdom: "npm:^29"
@@ -9335,6 +9336,13 @@ __metadata:
   dependencies:
     type-fest: "npm:^0.20.2"
   checksum: 10c0/d3c11aeea898eb83d5ec7a99508600fbe8f83d2cf00cbb77f873dbf2bcb39428eff1b538e4915c993d8a3b3473fa71eeebfe22c9bb3a3003d1e26b1f2c8a42cd
+  languageName: node
+  linkType: hard
+
+"globals@npm:^16.3.0":
+  version: 16.3.0
+  resolution: "globals@npm:16.3.0"
+  checksum: 10c0/c62dc20357d1c0bf2be4545d6c4141265d1a229bf1c3294955efb5b5ef611145391895e3f2729f8603809e81b30b516c33e6c2597573844449978606aad6eb38
   languageName: node
   linkType: hard
 
