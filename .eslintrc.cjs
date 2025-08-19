@@ -29,6 +29,7 @@ module.exports = /** @type {import("eslint").Linter.Config} */ {
     "prettier/prettier": "error", // Treat Prettier violations as errors
     "@typescript-eslint/explicit-module-boundary-types": "off", // Optional: Disables enforcing explicit return types on function signatures
     "react/no-unknown-property": ["error", { ignore: ["css"] }], // Required for emotion css prop
+    "react/no-unescaped-entities": "off", // Allow apostrophes and quotes in JSX
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
   },

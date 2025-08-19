@@ -1,9 +1,14 @@
 import { platformProps } from "@1fe/shell";
-import { Button, Flex, Card } from "antd";
+import { Flex, Card } from "antd";
 import { useReducer } from "react";
+import { SendOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { GetChildWidget } from "../misc/utils";
 import { WidgetContainer } from "../misc/widgetContainer";
+import { UtilityTooltip } from "../common/UtilityTooltip";
+import { UtilitySection } from "../common/UtilitySection";
+import { utilityCard, flexProps } from "../../sharedStyles";
+
 export const EventBus = () => {
   const [isVisible, showWidget] = useReducer(() => true, false);
 
@@ -14,45 +19,83 @@ export const EventBus = () => {
 
   return (
     <div data-qa="utils.eventBus.container">
-      <Card title="Event Bus Utilities" style={{ width: "650px" }}>
-        <Flex gap={5}>
-          <Button data-qa="utils.eventBus.get.btn" onClick={showWidget}>
-            utils.eventBus.get.test
-          </Button>
-          <Button
-            data-qa="utils.eventBus.publish1.btn"
-            onClick={() => {
-              platformProps.utils.eventBus.publish<WidgetEvents, "event1">({
-                targetWidgetId: "@1fe/sample-widget",
-                eventName: "event1",
-                data: { param1: "Listener is working!" },
-              });
-            }}
-          >
-            utils.eventBus.test.publish1
-          </Button>
-          <Button
-            data-qa="utils.eventBus.publish2.btn"
-            onClick={() => {
-              platformProps.utils.eventBus.publish<WidgetEvents, "event2">({
-                targetWidgetId: "@internal/generic-child-widget",
-                eventName: "event2",
-                data: { param2: "Test 2 should not fire" },
-              });
-            }}
-          >
-            utils.eventBus.test.publish2
-          </Button>
-        </Flex>
-        {isVisible && (
-          <WidgetContainer data-qa="utils.widgets.eventBus.result.container">
-            <GetChildWidget
-              isVisible={isVisible}
-              widgetId={"@1fe/sample-widget"}
-            />
-          </WidgetContainer>
-        )}
-      </Card>
+      <UtilitySection
+        title="Event Bus Utilities"
+        description="Enable inter-widget communication through a publish-subscribe pattern. Send messages between widgets without direct coupling."
+      >
+        <Card style={utilityCard}>
+          <Flex {...flexProps}>
+            <UtilityTooltip
+              title="Load Event Listener"
+              description="Loads a child widget that will listen for events. This demonstrates the receiving side of widget communication."
+              apiMethod="platformProps.utils.widgets.get()"
+              type="primary"
+              data-qa="utils.eventBus.get.btn"
+              onClick={showWidget}
+            >
+              <MessageOutlined /> Load Event Listener
+            </UtilityTooltip>
+
+            <UtilityTooltip
+              title="Send a published event"
+              description="Publishes an event to the listener widget. For the purposes of the demo, we know that the listener widget has subscribed to the event."
+              apiMethod="platformProps.utils.eventBus.publish()"
+              type="dashed"
+              data-qa="utils.eventBus.publish1.btn"
+              onClick={() => {
+                platformProps.utils.eventBus.publish<WidgetEvents, "event1">({
+                  targetWidgetId: "@1fe/sample-widget",
+                  eventName: "event1",
+                  data: { param1: "Listener is working!" },
+                });
+              }}
+            >
+              <SendOutlined /> Send a published event
+            </UtilityTooltip>
+
+            <UtilityTooltip
+              title="Send an unpublished event"
+              description="Publishes an event that the listener widget hasn't subscribed to."
+              apiMethod="platformProps.utils.eventBus.publish()"
+              type="dashed"
+              data-qa="utils.eventBus.publish2.btn"
+              onClick={() => {
+                platformProps.utils.eventBus.publish<WidgetEvents, "event2">({
+                  targetWidgetId: "@internal/generic-child-widget",
+                  eventName: "event2",
+                  data: { param2: "Test 2 should not fire" },
+                });
+              }}
+            >
+              <SendOutlined /> Send an unpublished event
+            </UtilityTooltip>
+          </Flex>
+
+          {isVisible && (
+            <div style={{ marginTop: 16 }}>
+              <div
+                style={{
+                  padding: 12,
+                  backgroundColor: "#f0f9ff",
+                  borderRadius: 6,
+                  marginBottom: 12,
+                  fontSize: 14,
+                  color: "#1890ff",
+                }}
+              >
+                📡 Event listener widget loaded below. Try sending events using
+                the buttons above!
+              </div>
+              <WidgetContainer data-qa="utils.widgets.eventBus.result.container">
+                <GetChildWidget
+                  isVisible={isVisible}
+                  widgetId={"@1fe/sample-widget"}
+                />
+              </WidgetContainer>
+            </div>
+          )}
+        </Card>
+      </UtilitySection>
     </div>
   );
 };
