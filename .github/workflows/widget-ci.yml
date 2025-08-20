@@ -24,7 +24,11 @@ permissions:
 jobs:
   run_minimal_ci:
     name: Widget CI
+<<<<<<< Updated upstream
     uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@fix/commit-author-bypass
+=======
+    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@feat/use-github-app
+>>>>>>> Stashed changes
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
