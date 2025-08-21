@@ -14,12 +14,20 @@ on:
         required: false
         type: string
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  repository-projects: write
+  id-token: write
+
 jobs:
   run_minimal_ci:
     name: Widget CI
-    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main
+    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@fix/commit-author-bypass
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
       AKAMAI_NS_SSH_PRIVATE_KEY: ${{ secrets.AKAMAI_NS_SSH_PRIVATE_KEY }}
       AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
+      FE_ADMIN_PRIVATE_KEY: ${{ secrets.FE_ADMIN_PRIVATE_KEY }}
