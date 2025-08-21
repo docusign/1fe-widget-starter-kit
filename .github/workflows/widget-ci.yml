@@ -24,10 +24,10 @@ permissions:
 jobs:
   run_minimal_ci:
     name: Widget CI
-    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@fix/commit-author-bypass
+    uses: docusign/1fe-ci-cd/.github/workflows/ci-widgets.yml@main
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
       AKAMAI_NS_SSH_PRIVATE_KEY: ${{ secrets.AKAMAI_NS_SSH_PRIVATE_KEY }}
       AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
-      FE_ADMIN_PRIVATE_KEY: ${{ secrets.FE_ADMIN_PRIVATE_KEY }}
+      PRIVATE_KEY_1FE_ADMIN_GITHUB_APP: ${{ secrets.PRIVATE_KEY_1FE_ADMIN_GITHUB_APP }}
